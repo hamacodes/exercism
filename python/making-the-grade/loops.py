@@ -70,7 +70,18 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
 
-    pass
+    master_list = []
+
+    for i in range(len(student_names)):
+        rank = i + 1    # Rank starts at 1
+        name = student_names[i]
+        score = student_scores[i]
+
+        # Format the string and add to list
+        master_list.append(f"{rank}. {name}: {score}")
+    
+    return master_list
+
 
 
 def perfect_score(student_info):
@@ -80,4 +91,9 @@ def perfect_score(student_info):
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
 
-    pass
+    for student in student_info:
+        if student[1] == 100:   # Student scores are index 1
+            return student
+    
+    # We only reach here without returning in loop if no student got perfect score
+    return []
