@@ -53,18 +53,13 @@ def letter_grades(highest):
             71 <= "B" <= 85
             86 <= "A" <= 100
     """
-    gradeToLetter = {
-        86 : "A",
-        71 : "B",
-        56 : "C",
-        41 : "D",
-    }
+    failing_score = 40  # Failing is anything <= 40% of highest
+    step = (highest - failing_score) // 4  # Interval size for each grade
 
-    highest_grade = ""
-    for key, val in gradeToLetter:
-        if grade >= key:
-            highest_grade = val
-    return highest_grade
+    # Calculate thresholds for D, C, B, A
+    thresholds = [failing_score + step * i + 1 for i in range(4)]
+
+    return thresholds
 
 
 def student_ranking(student_scores, student_names):
