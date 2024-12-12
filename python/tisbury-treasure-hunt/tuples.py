@@ -68,8 +68,10 @@ def clean_up(combined_record_group):
     cleaned = ""
 
     for item in combined_record_group:
-        print(item)
-        cleaned += str(item)
-        cleaned += "\n"
+        treasure = str(item[0])
+        location = str(item[2])
+        coordinates = str(item[3])
+        quadrant = str(item[4])
+        cleaned += f"('{treasure}', '{location}', {coordinates}, '{quadrant}')\n"
     
     return cleaned
