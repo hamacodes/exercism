@@ -24,7 +24,12 @@ def read_notes(notes):
     :return: dict - a user shopping cart dictionary.
     """
 
-    pass
+    cart = {}
+
+    for item in notes:
+        cart[item] = 1
+
+    return cart
 
 
 def update_recipes(ideas, recipe_updates):
