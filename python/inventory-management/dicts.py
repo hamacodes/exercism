@@ -71,5 +71,6 @@ def list_inventory(inventory):
     :return: list of tuples - list of key, value pairs from the inventory dictionary.
     """
 
-    pass
+    result = [(item, inventory[item]) for item in inventory if inventory[item] > 0]
 
+    return result
