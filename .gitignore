@@ -1,5 +1,6 @@
-# Ignore exercism specific files
+# Ignore VScode and Exercism specific files
 .exercism
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
