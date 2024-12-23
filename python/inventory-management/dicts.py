@@ -8,7 +8,11 @@ def create_inventory(items):
     :return: dict - the inventory dictionary.
     """
 
-    pass
+    result = {}
+    for item in items:
+        result[item] =+ 1 if item in result else result[item] = 1
+    
+    return result
 
 
 def add_items(inventory, items):
