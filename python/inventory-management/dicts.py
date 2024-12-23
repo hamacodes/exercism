@@ -10,7 +10,10 @@ def create_inventory(items):
 
     result = {}
     for item in items:
-        result[item] =+ 1 if item in result else result[item] = 1
+        if item in result:
+            result[item] += 1
+        else:
+            result[item] = 1
     
     return result
 
