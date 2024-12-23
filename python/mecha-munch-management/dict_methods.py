@@ -9,8 +9,13 @@ def add_item(current_cart, items_to_add):
     :return: dict - the updated user cart dictionary.
     """
 
-    pass
-
+    for item in items_to_add:
+        if item in current_cart:
+            current_cart[item] += 1
+        else:
+            current_cart[item] = 1
+    
+    return current_cart
 
 def read_notes(notes):
     """Create user cart from an iterable notes entry.
