@@ -1,5 +1,5 @@
-# Ignore excersism specific files
-.excersism
+# Ignore exercism specific files
+.exercism
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
