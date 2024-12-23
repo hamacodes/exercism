@@ -27,11 +27,12 @@ def add_items(inventory, items):
     """
 
     for item in items:
-        if inventory[item] >= 1:
+        if item in inventory:
             inventory[item] += 1
         else:
             inventory[item] = 1
 
+    return inventory
 
 def decrement_items(inventory, items):
     """Decrement items in inventory using elements from the `items` list.
