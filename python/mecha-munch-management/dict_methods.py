@@ -53,7 +53,10 @@ def sort_entries(cart):
     :return: dict - users shopping cart sorted in alphabetical order.
     """
 
-    pass
+    # In python, dictionaries can be sorted using the iterable version of a dictionary.
+    # using .items() will default to sorting by key
+
+    return sorted(cart.items()) # cart.items() return list of tuples, sorted acts on the keys of the tuples
 
 
 def send_to_store(cart, aisle_mapping):
