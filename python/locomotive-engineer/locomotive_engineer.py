@@ -19,8 +19,14 @@ def fix_list_of_wagons(each_wagons_id, missing_wagons):
     :param missing_wagons: list - the list of missing wagons.
     :return: list - list of wagons.
     """
-    pass
+    
+    a, b, locomotive, *rest = each_wagons_id
 
+    # Reposition the first two items of the first list to the end
+    # Insert the values from the second list behind (on the right hand side of) the locomotive ID (1)
+    *combined, = locomotive, *missing_wagons, *rest, a, b
+
+    return combined
 
 def add_missing_stops():
     """Add missing stops to route dict.
