@@ -67,7 +67,14 @@ def send_to_store(cart, aisle_mapping):
     :return: dict - fulfillment dictionary ready to send to store.
     """
 
-    pass
+    fulfilment_cart = {}
+
+    for item, quantity in cart.items():
+        aisle = aisle_mapping[item][0]  # First entry of value
+        frige = aisle_mapping[item][1]  # Second entry of value
+        fulfilment_cart[item] = [quantity, aisle, frige]
+    
+    return sorted(fulfilment_cart.items(), reverse=True)
 
 
 def update_store_inventory(fulfillment_cart, store_inventory):
