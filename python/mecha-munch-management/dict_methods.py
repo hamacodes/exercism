@@ -40,7 +40,10 @@ def update_recipes(ideas, recipe_updates):
     :return: dict - updated "recipe ideas" dict.
     """
 
-    pass
+    # .update() method can be used to combine dictionaries
+    ideas.update(recipe_updates)
+
+    return ideas
 
 
 def sort_entries(cart):
